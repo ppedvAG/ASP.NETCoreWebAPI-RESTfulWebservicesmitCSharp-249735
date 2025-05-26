@@ -16,6 +16,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "M002_Konfiguration", "M002_
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloDIP", "HelloDIP\HelloDIP.csproj", "{0ADF7CAE-81DA-400F-8410-D400C6691CFD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloLogging", "HelloLogging\HelloLogging.csproj", "{C60C1E77-FB87-459F-A661-E35082DDA78D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,6 +32,10 @@ Global
 		{0ADF7CAE-81DA-400F-8410-D400C6691CFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0ADF7CAE-81DA-400F-8410-D400C6691CFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0ADF7CAE-81DA-400F-8410-D400C6691CFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C60C1E77-FB87-459F-A661-E35082DDA78D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C60C1E77-FB87-459F-A661-E35082DDA78D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C60C1E77-FB87-459F-A661-E35082DDA78D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C60C1E77-FB87-459F-A661-E35082DDA78D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -37,5 +43,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{026F2664-ED74-401C-BD45-0724FA1443E5} = {929C7755-E55C-4C49-AF98-5F76CFAA8281}
 		{0ADF7CAE-81DA-400F-8410-D400C6691CFD} = {A198648C-EEFD-4A94-BAB2-B807FF581A08}
+		{C60C1E77-FB87-459F-A661-E35082DDA78D} = {A198648C-EEFD-4A94-BAB2-B807FF581A08}
 	EndGlobalSection
 EndGlobal
