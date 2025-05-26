@@ -1,0 +1,56 @@
+@VehicleManagement_HostAddress = http://localhost:5206
+
+GET {{VehicleManagement_HostAddress}}/api/v1/vehicles/
+Accept: application/json
+
+###
+
+GET {{VehicleManagement_HostAddress}}/api/v1/vehicles/
+Accept: application/xml
+###
+
+GET {{VehicleManagement_HostAddress}}/api/v1/vehicles/
+Accept: text/csv
+
+###
+
+GET {{VehicleManagement_HostAddress}}/api/v1/vehicles/00000000-0000-0000-0000-000000000000
+Accept: application/json
+
+###
+
+POST {{VehicleManagement_HostAddress}}/api/v1/vehicles
+Content-Type: application/json
+Accept: application/json
+
+{
+  "manufacturer": "Honda",
+  "model": "Civic",
+  "color": "Blue",
+  "fuel": "Gasoline",
+  "topSpeed": 200,
+  "type": "Sedan",
+  "registered": "2022-01-01T00:00:00Z"
+}
+
+###
+
+PUT {{VehicleManagement_HostAddress}}/api/v1/vehicles/098b6ecc-5714-b09a-36cf-d6280bb3c707
+Content-Type: application/json
+Accept: application/json
+
+{
+  "manufacturer": "BMW",
+  "model": "Isetta",
+  "fuel": "Gasoline",
+  "color": "Red",
+  "type": "Coupe",
+  "topSpeed": 50,
+  "registered": "1950-01-01T00:00:00Z"
+}
+
+###
+
+DELETE {{VehicleManagement_HostAddress}}/api/v1/vehicles/96ba173e-04ae-3bcd-9986-9e56f0adbf3a
+Accept: application/json
+
