@@ -28,6 +28,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "M003_Controllers", "M003_Co
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VehicleManagementApi", "VehicleManagementApi\VehicleManagementApi.csproj", "{2ECD4538-3FAD-4ACF-AC45-77E75CA164A7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LabBusinessModel", "LabBusinessModel\LabBusinessModel.csproj", "{68DCF2FB-40C2-4A47-A0B3-833190B02AD6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LabMovieApi", "LabMovieApi\LabMovieApi.csproj", "{83CCF59F-2034-4805-82C6-6F87BCBA4833}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -62,6 +66,14 @@ Global
 		{2ECD4538-3FAD-4ACF-AC45-77E75CA164A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2ECD4538-3FAD-4ACF-AC45-77E75CA164A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2ECD4538-3FAD-4ACF-AC45-77E75CA164A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68DCF2FB-40C2-4A47-A0B3-833190B02AD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68DCF2FB-40C2-4A47-A0B3-833190B02AD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68DCF2FB-40C2-4A47-A0B3-833190B02AD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68DCF2FB-40C2-4A47-A0B3-833190B02AD6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83CCF59F-2034-4805-82C6-6F87BCBA4833}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83CCF59F-2034-4805-82C6-6F87BCBA4833}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83CCF59F-2034-4805-82C6-6F87BCBA4833}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83CCF59F-2034-4805-82C6-6F87BCBA4833}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -73,5 +85,6 @@ Global
 		{E34C1137-DCE6-4127-A728-7A1AF427E0EE} = {A198648C-EEFD-4A94-BAB2-B807FF581A08}
 		{FB6283FC-21DB-482A-942B-4618E9B4F98D} = {A198648C-EEFD-4A94-BAB2-B807FF581A08}
 		{2ECD4538-3FAD-4ACF-AC45-77E75CA164A7} = {623F9DA9-3A42-4BE6-B90C-7C4019267581}
+		{83CCF59F-2034-4805-82C6-6F87BCBA4833} = {623F9DA9-3A42-4BE6-B90C-7C4019267581}
 	EndGlobalSection
 EndGlobal
