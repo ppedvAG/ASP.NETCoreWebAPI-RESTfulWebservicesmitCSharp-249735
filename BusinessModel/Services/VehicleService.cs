@@ -21,6 +21,7 @@ namespace BusinessModel.Services
 
         public Task AddVehicle(Auto vehicle)
         {
+            vehicle.Id = Guid.NewGuid();
             _autos.Add(vehicle);
             return Task.CompletedTask;
         }
