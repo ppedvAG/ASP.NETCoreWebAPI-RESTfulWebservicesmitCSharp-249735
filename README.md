@@ -52,8 +52,8 @@ dotnet ef database update --project myProject
 ```
 Alternativ DB erzeugen via Package Manager Console
 ```
-Add-Migration MyInitialScriptName
-Update-Database
+Add-Migration MyInitialScriptName [-Context VehicleDbContext]
+Update-Database [-Context VehicleDbContext]
 ```
 
 -	[ ] Db First: Northwind Datenbank

@@ -1,5 +1,6 @@
 ﻿using Bogus;
 using BusinessModel.Models;
+using Microsoft.EntityFrameworkCore;
 using System.Drawing;
 
 namespace BusinessModel.Data;
@@ -24,5 +25,18 @@ public class Seed
             .Generate(count);
 
         return cars;
+    }
+
+    public static IEnumerable<Customer> GenerateCustomers(int count) => new Faker<Customer>()
+            .UseSeed(42)
+            .RuleFor(x => x.Id, f => f.Random.Guid())
+            .RuleFor(x => x.Name, f => f.Person.FullName)
+            .RuleFor(x => x.Email, f => f.Person.Email)
+            .Generate(count);
+
+    public static void SeedData(ModelBuilder builder)
+    {
+        builder.Entity<Auto>().HasData(GenerateAutos(100));
+        builder.Entity<Customer>().HasData(GenerateCustomers(10));
     }
 }
