@@ -1,11 +1,36 @@
-@HostAddress = http://localhost:5077
+@HostAddress = https://localhost:44300
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJSLiBSb290IiwiZW1haWwiOiJyb290QGV4YW1wbGUuY29tIiwianRpIjoiODg1OTM4N2EtNzRkMi00MWYxLTk0OTItYzM5ZjNhM2JmMzlkIiwibmJmIjoxNzQ4MzUwNjkyLCJleHAiOjE3NDg5NTU0OTIsImlhdCI6MTc0ODM1MDY5MiwiaXNzIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NDQzMzMiLCJhdWQiOiJodHRwczovL2xvY2FsaG9zdDo0NDMwMCJ9.I1wBNl1HtwPzxZOsZIy22uoyX-YFWokBLmFnjni6gT4
+
+POST {{HostAddress}}/api/account/login
+Content-Type: application/json
+Accept: application/json
+
+{
+  "username": "R. Root",
+  "password": "Syst3m"
+}
+
+###
+
+POST {{HostAddress}}/api/account/register
+Content-Type: application/json
+Accept: application/json
+
+{
+  "username": "WebApiUser-123",
+  "email": "webapiuser123@example.com",
+  "password": "Syst3m"
+}
+
+###
 
 GET {{HostAddress}}/api/v1/vehicles/
 Accept: application/json
 
 ###
 
-GET {{HostAddress}}/api/v1/vehicles/00000000-0000-0000-0000-000000000000
+GET {{HostAddress}}/api/v1/vehicles/098b6ecc-5714-b09a-36cf-d6280bb3c707
+Authorization: Bearer {{token}}
 Accept: application/json
 
 ###

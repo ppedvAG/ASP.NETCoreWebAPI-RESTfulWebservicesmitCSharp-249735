@@ -3,11 +3,14 @@ using Microsoft.AspNetCore.Mvc;
 using System.Drawing;
 using RentACarApi.Mappers;
 using RentACarApi.Models;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace RentACarApi.Controllers;
 
+[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
 [Route("api/v1/[controller]")]
 [ApiController]
 public class VehiclesController : ControllerBase
