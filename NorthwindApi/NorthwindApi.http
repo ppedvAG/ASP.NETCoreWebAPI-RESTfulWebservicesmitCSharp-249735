@@ -51,3 +51,34 @@ Content-Type: application/json
 
 ### Delete Employee
 DELETE {{NorthwindApi_HostAddress}}/api/employees/10
+
+### LABS
+
+GET {{NorthwindApi_HostAddress}}/api/customers/
+Accept: application/json
+
+###
+
+GET {{NorthwindApi_HostAddress}}/api/customers?country=Canada
+Accept: application/json
+
+###
+
+GET {{NorthwindApi_HostAddress}}/api/orders/
+Accept: application/json
+
+###
+
+GET {{NorthwindApi_HostAddress}}/api/orders/?customerid=ANTON
+Accept: application/json
+
+###
+GET {{NorthwindApi_HostAddress}}/api/orders/?startdate=1997-05-01&enddate=1997-05-11
+Accept: application/json
+
+###
+
+GET {{NorthwindApi_HostAddress}}/api/orders/11080
+Accept: application/json
+
+###
