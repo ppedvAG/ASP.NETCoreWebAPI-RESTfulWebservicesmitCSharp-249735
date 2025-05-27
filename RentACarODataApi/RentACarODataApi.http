@@ -1,0 +1,20 @@
+@RentACarODataApi_HostAddress = http://localhost:5083
+
+### OData EDM Model Beschreibung
+GET {{RentACarODataApi_HostAddress}}/odata
+Accept: application/json
+
+### OData Metadata
+GET {{RentACarODataApi_HostAddress}}/odata/$metadata
+
+### Zweite Seite der Fahrzeuge mit einer Seitenlaenge von 10 anzeigen
+GET {{RentACarODataApi_HostAddress}}/odata/vehicles?$skip=10&$top=10
+Accept: application/json
+
+### Gebe alle elektrischen Fahrzeuge zurueck, sortiert nach TopSpeed absteigend
+GET {{RentACarODataApi_HostAddress}}/odata/vehicles?$filter=Fuel+eq+'Electric'&$orderby=TopSpeed+desc
+Accept: application/json
+
+### Gebe alle Fahrzeuge zurueck, welche 2020 erstmals gekauft wurden
+GET {{RentACarODataApi_HostAddress}}/odata/vehicles?$filter=Registered+ge+2020-01-01+and+Registered+lt+2021-01-01&$orderby=Color
+Accept: application/json
