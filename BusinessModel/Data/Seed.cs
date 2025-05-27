@@ -7,6 +7,16 @@ namespace BusinessModel.Data;
 
 public class Seed
 {
+    #region Constants
+    // Fuer Tests ist es besser die Testdaten nicht via Bogus zur Laufzeit generieren zu lassen
+    // sondern hier explizit auszuschreiben. Weil wir einen Seed verwenden, ist diese Guid konstant.
+    public const string Vehicle1Id = "098B6ECC-5714-B09A-36CF-D6280BB3C707";
+    public const string Vehicle1Manufacturer = "Porsche";
+    public const string Vehicle1Model = "A4";
+    public const string Vehicle1Fuel = "Diesel";
+    public const int Vehicle1TopSpeed = 100; 
+    #endregion
+
     // Install-Package Bogus
     public static IEnumerable<Auto> GenerateAutos(int count)
     {

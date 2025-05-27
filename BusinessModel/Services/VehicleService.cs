@@ -28,10 +28,10 @@ public class VehicleService : IVehicleService
 
     public async Task<bool> DeleteVehicle(Guid id)
     {
-        var exists = _context.Vehicles.SingleOrDefault(x => x.Id == id);
-        if (exists != null)
+        var existingVehicle = _context.Vehicles.SingleOrDefault(x => x.Id == id);
+        if (existingVehicle != null)
         {
-            _context.Vehicles.Remove(exists);
+            _context.Vehicles.Remove(existingVehicle);
             await _context.SaveChangesAsync();
             return true;
         }
@@ -40,10 +40,18 @@ public class VehicleService : IVehicleService
 
     public async Task<bool> UpdateVehicle(Guid id, Auto vehicle)
     {
-        var exists = _context.Vehicles.Any(x => x.Id == id);
-        if (exists)
+        var existingVehicle = _context.Vehicles.SingleOrDefault(x => x.Id == id);
+        if (existingVehicle != null)
         {
-            _context.Vehicles.Update(vehicle);
+            existingVehicle.Manufacturer = vehicle.Manufacturer;
+            existingVehicle.Model = vehicle.Model;
+            existingVehicle.Type = vehicle.Type;
+            existingVehicle.Registered = vehicle.Registered;
+
+            existingVehicle.Color = vehicle.Color;
+            existingVehicle.TopSpeed = vehicle.TopSpeed;
+            existingVehicle.Fuel = vehicle.Fuel;
+
             await _context.SaveChangesAsync();
             return true;
         }
