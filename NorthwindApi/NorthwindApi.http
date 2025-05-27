@@ -1,0 +1,53 @@
+@NorthwindApi_HostAddress = http://localhost:5125
+
+### Northwind Employee CRUD Operations
+
+### Get All Employees
+GET {{NorthwindApi_HostAddress}}/api/employees
+Accept: application/json
+
+### Get Employee by ID
+GET {{NorthwindApi_HostAddress}}/api/employees/1
+Accept: application/json
+
+### Create New Employee
+POST {{NorthwindApi_HostAddress}}/api/employees
+Content-Type: application/json
+{
+  "lastName": "Doe",
+  "firstName": "John",
+  "title": "Sales Representative",
+  "titleOfCourtesy": "Mr.",
+  "birthDate": "1970-01-01",
+  "hireDate": "1990-01-01",
+  "address": "123 Main St",
+  "city": "Anytown",
+  "region": "CA",
+  "postalCode": "12345",
+  "country": "USA",
+  "homePhone": "123-456-7890",
+  "extension": "1234"
+}
+
+### Update Existing Employee
+PUT {{NorthwindApi_HostAddress}}/api/employees/10
+Content-Type: application/json
+{
+  "employeeID": 10,
+  "lastName": "Doe",
+  "firstName": "Jane",
+  "title": "Sales Representative",
+  "titleOfCourtesy": "Ms.",
+  "birthDate": "1970-01-01",
+  "hireDate": "1990-01-01",
+  "address": "123 Main St",
+  "city": "Anytown",
+  "region": "CA",
+  "postalCode": "12345",
+  "country": "USA",
+  "homePhone": "123-456-7890",
+  "extension": "1234"
+}
+
+### Delete Employee
+DELETE {{NorthwindApi_HostAddress}}/api/employees/10
