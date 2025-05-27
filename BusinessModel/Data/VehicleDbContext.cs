@@ -1,9 +1,10 @@
 ﻿using BusinessModel.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace BusinessModel.Data;
 
-public class VehicleDbContext : DbContext
+public class VehicleDbContext : IdentityDbContext
 {
     public DbSet<Auto> Vehicles { get; set; }
 
@@ -19,6 +20,8 @@ public class VehicleDbContext : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
+
+        Seed.InitIdentityData(modelBuilder);
 
         Seed.SeedData(modelBuilder);
     }
