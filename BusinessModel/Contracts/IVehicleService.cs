@@ -7,7 +7,7 @@ namespace BusinessModel.Contracts
         Task AddVehicle(Auto vehicle);
         Task<bool> DeleteVehicle(Guid id);
         Task<Auto?> GetVehicleById(Guid id);
-        Task<List<Auto>> GetVehicles();
+        Task<IEnumerable<Auto>> GetVehicles();
         Task<bool> UpdateVehicle(Guid id, Auto vehicle);
     }
 }

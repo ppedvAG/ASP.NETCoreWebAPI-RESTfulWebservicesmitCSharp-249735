@@ -1,51 +1,52 @@
 ﻿using BusinessModel.Contracts;
 using BusinessModel.Data;
 using BusinessModel.Models;
+using Microsoft.EntityFrameworkCore;
 
-namespace BusinessModel.Services
+namespace BusinessModel.Services;
+
+public class VehicleService : IVehicleService
 {
-    public class StaticVehicleService : IVehicleService
+    private readonly VehicleDbContext _context;
+
+    public VehicleService(VehicleDbContext context)
     {
-        private readonly List<Auto> _autos = Seed.GenerateAutos(20).ToList();
+        _context = context;
+    }
 
-        public Task<List<Auto>> GetVehicles()
-        {
-            return Task.FromResult(_autos);
-        }
+    public async Task<Auto?> GetVehicleById(Guid id)
+        => await _context.Vehicles.SingleOrDefaultAsync(x => x.Id == id);
 
-        public Task<Auto?> GetVehicleById(Guid id)
-        {
-            var result = _autos.SingleOrDefault(x => x.Id == id);
-            return Task.FromResult(result);
-        }
+    public async Task<IEnumerable<Auto>> GetVehicles()
+        => await _context.Vehicles.ToListAsync();
 
-        public Task AddVehicle(Auto vehicle)
-        {
-            vehicle.Id = Guid.NewGuid();
-            _autos.Add(vehicle);
-            return Task.CompletedTask;
-        }
+    public async Task AddVehicle(Auto vehicle)
+    {
+        _context.Vehicles.Add(vehicle);
+        await _context.SaveChangesAsync();
+    }
 
-        public Task<bool> DeleteVehicle(Guid id)
+    public async Task<bool> DeleteVehicle(Guid id)
+    {
+        var exists = _context.Vehicles.SingleOrDefault(x => x.Id == id);
+        if (exists != null)
         {
-            var index = _autos.FindIndex(x => x.Id == id);
-            if (index != -1)
-            {
-                _autos.RemoveAt(index);
-                return Task.FromResult(true);
-            }
-            return Task.FromResult(false);
+            _context.Vehicles.Remove(exists);
+            await _context.SaveChangesAsync();
+            return true;
         }
+        return false;
+    }
 
-        public Task<bool> UpdateVehicle(Guid id, Auto vehicle)
+    public async Task<bool> UpdateVehicle(Guid id, Auto vehicle)
+    {
+        var exists = _context.Vehicles.Any(x => x.Id == id);
+        if (exists)
         {
-            var index = _autos.FindIndex(x => x.Id == id);
-            if (index != -1)
-            {
-                _autos[index] = vehicle;
-                return Task.FromResult(true);
-            }
-            return Task.FromResult(false);
+            _context.Vehicles.Update(vehicle);
+            await _context.SaveChangesAsync();
+            return true;
         }
+        return false;
     }
 }
